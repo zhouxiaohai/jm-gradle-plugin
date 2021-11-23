@@ -1,0 +1,12 @@
+.gradle
+build/
+/gradle
+!**/src/main/**
+!**/src/test/**
+
+.idea
+.DS_Store
+*.iws
+*.iml
+*.ipr
+out/
