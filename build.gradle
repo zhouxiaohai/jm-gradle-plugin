@@ -1,3 +1,7 @@
+plugins {
+    id "com.gradle.plugin-publish" version "0.18.0"
+}
+
 allprojects {
     repositories {
         maven{ url 'http://maven.ejiahe.com:8081/repository/gzb_public/'}
@@ -9,14 +13,14 @@ subprojects {
     apply plugin: 'groovy'
     apply plugin: 'java-gradle-plugin'
     apply plugin: 'maven-publish'
-
+    apply plugin: 'com.gradle.plugin-publish'
     apply from: "../build-config.gradle"
 
     dependencies {
         implementation gradleApi()
         implementation localGroovy()
     }
-
+    /**
     publishing {
         publications {
             maven(MavenPublication) {
@@ -38,5 +42,8 @@ subprojects {
             }
         }
     }
+ **/
+
+
 }
 
