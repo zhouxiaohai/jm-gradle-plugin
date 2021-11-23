@@ -1,0 +1,6 @@
+rootProject.name = 'jm-gradle-plugin'
+include 'jm-optional'
+include 'jm-builder'
+include 'jm-structure'
+include 'jm-publisher'
+
