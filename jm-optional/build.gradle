@@ -1,0 +1,35 @@
+task javadocJar(type: Jar) {
+    archiveClassifier.set('javadoc')
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    archiveClassifier.set("sources")
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+gradlePlugin {
+    plugins {
+        greetingsPlugin {
+            id = 'com.ejiahe.plugin.jm.optional' //插件的id
+            implementationClass = 'com.ejiahe.gradle.plugin.optional.OptionalPlugin'
+        }
+    }
+}
+
+pluginBundle {
+    website = 'https://github.com/zhouxiaohai/jm-gradle-plugin'
+    vcsUrl = 'https://github.com/zhouxiaohai/jm-gradle-plugin'
+    description = 'jm.optional gradle plugin' //插件描述
+    tags = ['jm-optional'] //搜索关键词
+    plugins {
+        greetingsPlugin {
+            // id is captured from java-gradle-plugin configuration
+            displayName = 'jm-optional gradle plugin'
+        }
+    }
+}
