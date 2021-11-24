@@ -15,7 +15,7 @@ artifacts {
 gradlePlugin {
     plugins {
         greetingsPlugin {
-            id = 'com.ejiahe.plugin.jm.structure' //插件的id
+            id = 'com.ejiahe.plugin-structure' //插件的id
             implementationClass = 'com.ejiahe.gradle.plugin.structure.StructurePlugin'
         }
     }
