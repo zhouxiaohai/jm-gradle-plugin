@@ -1,0 +1,49 @@
+plugins {
+    id "com.gradle.plugin-publish" version "0.18.0"
+}
+
+allprojects {
+    repositories {
+        maven{ url 'http://maven.ejiahe.com:8081/repository/gzb_public/'}
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'groovy'
+    apply plugin: 'java-gradle-plugin'
+    apply plugin: 'maven-publish'
+    apply plugin: 'com.gradle.plugin-publish'
+    apply from: "../build-config.gradle"
+
+    dependencies {
+        implementation gradleApi()
+        implementation localGroovy()
+    }
+    /**
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId "$project.group"
+                artifactId "$project.name"
+                version "$project.version"
+                //如果是war包填写components.web，如果是jar包填写components.java
+                from components.java
+
+            }
+        }
+        repositories {
+            maven {
+                url = "http://maven.ejiahe.com:8081/repository/gzb3rd_Part/"
+                credentials {
+                    username 'publisher'
+                    password 'Jh123456'
+                }
+            }
+        }
+    }
+ **/
+
+
+}
+
